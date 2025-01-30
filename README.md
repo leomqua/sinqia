@@ -1,6 +1,6 @@
 📍 Pontos Turísticos
 
-Sobre o Projeto:  
+📋 Sobre o Projeto:  
 Este é um sistema para o cadastro, listagem, atualização e exclusão de pontos turísticos. Ele permite:
 
 - Cadastrar novos pontos turísticos.
