@@ -1,0 +1,46 @@
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa; /* Cor clara para o fundo */
+    margin: 0;
+    padding: 0;
+}
+
+/* Navbar */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra na navbar */
+}
+
+/* Header */
+header {
+    background: linear-gradient(to right, #007bff, #6610f2); /* Gradiente */
+    color: white;
+}
+
+/* Tabela */
+.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #f2f2f2; /* Linhas alternadas com cor clara */
+}
+
+.table-hover tbody tr:hover {
+    background-color: #e9ecef; /* Destaque ao passar o mouse */
+}
+
+/* Paginação */
+.pagination .page-item .page-link {
+    color: #007bff; /* Cor do link */
+}
+
+.pagination .page-item.active .page-link {
+    background-color: #007bff; /* Cor do botão ativo */
+    border-color: #007bff;
+    color: white;
+}
+
+/* Botões */
+button {
+    transition: background-color 0.3s ease;
+}
+button:hover {
+    background-color: #0056b3;
+}

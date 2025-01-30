@@ -1,0 +1,57 @@
+{
+  "Files": [
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\css\\styles.css",
+      "PackagePath": "staticwebassets\\css\\styles.css"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\js\\cadastro.js",
+      "PackagePath": "staticwebassets\\js\\cadastro.js"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\js\\editar.js",
+      "PackagePath": "staticwebassets\\js\\editar.js"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\js\\index.js",
+      "PackagePath": "staticwebassets\\js\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\js\\remover.js",
+      "PackagePath": "staticwebassets\\js\\remover.js"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\cadastro.html",
+      "PackagePath": "staticwebassets\\pages\\cadastro.html"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\editar.html",
+      "PackagePath": "staticwebassets\\pages\\editar.html"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\index.html",
+      "PackagePath": "staticwebassets\\pages\\index.html"
+    },
+    {
+      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\remover.html",
+      "PackagePath": "staticwebassets\\pages\\remover.html"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Prova.Microsoft.AspNetCore.StaticWebAssets.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.build.Prova.props",
+      "PackagePath": "build\\Prova.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildMultiTargeting.Prova.props",
+      "PackagePath": "buildMultiTargeting\\Prova.props"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.buildTransitive.Prova.props",
+      "PackagePath": "buildTransitive\\Prova.props"
+    }
+  ],
+  "ElementsToRemove": []
+}
