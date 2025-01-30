@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "dCScRx4jvArpVK5B0yQr98xx42Rb59AaM58i/PKi7f0=",
+  "Hash": "QmMwxREpUZCgalv1nmmuNUwt1clWmyOCoFfq0+RpSw4=",
   "Source": "Prova",
   "BasePath": "_content/Prova",
   "Mode": "Default",
@@ -93,25 +93,6 @@
       "OriginalItemSpec": "wwwroot\\js\\index.js"
     },
     {
-      "Identity": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\js\\remover.js",
-      "SourceId": "Prova",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\",
-      "BasePath": "_content/Prova",
-      "RelativePath": "js/remover.js",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\js\\remover.js"
-    },
-    {
       "Identity": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\cadastro.html",
       "SourceId": "Prova",
       "SourceType": "Discovered",
@@ -167,25 +148,6 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\pages\\index.html"
-    },
-    {
-      "Identity": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\remover.html",
-      "SourceId": "Prova",
-      "SourceType": "Discovered",
-      "ContentRoot": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\",
-      "BasePath": "_content/Prova",
-      "RelativePath": "pages/remover.html",
-      "AssetKind": "All",
-      "AssetMode": "All",
-      "AssetRole": "Primary",
-      "AssetMergeBehavior": "PreferTarget",
-      "AssetMergeSource": "",
-      "RelatedAsset": "",
-      "AssetTraitName": "",
-      "AssetTraitValue": "",
-      "CopyToOutputDirectory": "Never",
-      "CopyToPublishDirectory": "PreserveNewest",
-      "OriginalItemSpec": "wwwroot\\pages\\remover.html"
     }
   ]
 }

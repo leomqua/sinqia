@@ -7,7 +7,7 @@ function carregarPontosTuristicos() {
         .then(response => response.json())
         .then(data => {
             const tableBody = document.getElementById('tableBody');
-            tableBody.innerHTML = ""; // Limpa os dados antigos
+            tableBody.innerHTML = ""; 
 
             data.forEach(ponto => {
                 const row = `
@@ -17,7 +17,16 @@ function carregarPontosTuristicos() {
                         <td>${ponto.cidade}</td>
                         <td>${ponto.estado}</td>
                         <td>
-                            <button class="btn btn-danger btn-sm" onclick="apagarPonto(${ponto.id})">X</button>
+                            <!-- Botão de edição com ícone de lápis -->
+                            <button class="btn btn-warning btn-sm" onclick="redirecionarParaEdicao('${ponto.nome}')">
+                                <i class="bi bi-pencil"></i>
+                            </button>
+                        </td>
+                        <td>
+                            <!-- Botão de remoção com ícone de X -->
+                            <button class="btn btn-danger btn-sm" onclick="apagarPonto(${ponto.id})">
+                                <i class="bi bi-x"></i>
+                            </button>
                         </td>
                     </tr>`;
                 tableBody.innerHTML += row;
@@ -27,15 +36,16 @@ function carregarPontosTuristicos() {
 }
 
 
+
+
 function filtrar() {
     const termo = document.getElementById("searchBox").value.toLowerCase();
 
-    // Faz a requisição para o endpoint de busca pelo nome
     fetch(`/api/PontosTuristicos/${termo}`)
         .then(response => {
             if (!response.ok) {
                 if (response.status === 404) {
-                    // Exibe uma mensagem caso nenhum resultado seja encontrado
+
                     const tableBody = document.getElementById("tableBody");
                     tableBody.innerHTML = `<tr><td colspan="4" class="text-center">Nenhum ponto turístico encontrado com esse nome</td></tr>`;
                     return null;
@@ -45,12 +55,11 @@ function filtrar() {
             return response.json();
         })
         .then(data => {
-            if (!data) return; // Se nenhum resultado foi encontrado, sai da função
+            if (!data) return; 
 
             const tableBody = document.getElementById("tableBody");
-            tableBody.innerHTML = ""; // Limpa os resultados anteriores
+            tableBody.innerHTML = ""; 
 
-            // Adiciona os novos resultados na tabela
             data.forEach(ponto => {
                 const row = `<tr>
                     <td>${ponto.nome}</td>
@@ -75,7 +84,7 @@ function apagarPonto(id) {
                     throw new Error("Erro ao excluir o ponto turístico.");
                 }
                 alert("Ponto turístico excluído com sucesso!");
-                carregarPontosTuristicos(); // Recarrega a lista após exclusão
+                carregarPontosTuristicos(); 
             })
             .catch(error => {
                 console.error('Erro ao excluir ponto turístico:', error);
@@ -84,3 +93,7 @@ function apagarPonto(id) {
     }
 }
 
+
+function redirecionarParaEdicao(nome) {
+    window.location.href = `editar.html?nome=${encodeURIComponent(nome)}`;
+}

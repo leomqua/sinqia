@@ -4,12 +4,11 @@ document.addEventListener("DOMContentLoaded", function () {
 });
 
 function carregarEstados() {
-    // Busca os estados da API do IBGE
     fetch('https://servicodados.ibge.gov.br/api/v1/localidades/estados')
         .then(response => response.json())
         .then(data => {
             const estadoSelect = document.getElementById("estado");
-            data.sort((a, b) => a.nome.localeCompare(b.nome)); // Ordena os estados pelo nome
+            data.sort((a, b) => a.nome.localeCompare(b.nome)); 
 
             data.forEach(estado => {
                 const option = document.createElement("option");
@@ -22,14 +21,13 @@ function carregarEstados() {
 }
 
 function carregarCidades(siglaEstado) {
-    // Busca as cidades do estado selecionado
     fetch(`https://servicodados.ibge.gov.br/api/v1/localidades/estados/${siglaEstado}/municipios`)
         .then(response => response.json())
         .then(data => {
             const cidadeSelect = document.getElementById("cidade");
-            cidadeSelect.innerHTML = ""; // Limpa as cidades anteriores
+            cidadeSelect.innerHTML = ""; 
 
-            data.sort((a, b) => a.nome.localeCompare(b.nome)); // Ordena as cidades pelo nome
+            data.sort((a, b) => a.nome.localeCompare(b.nome)); 
             data.forEach(cidade => {
                 const option = document.createElement("option");
                 option.value = cidade.nome;
@@ -44,7 +42,6 @@ function configurarFormulario() {
     const estadoSelect = document.getElementById("estado");
     const formCadastro = document.getElementById("formCadastro");
 
-    // Atualiza as cidades quando um estado for selecionado
     estadoSelect.addEventListener("change", function () {
         const siglaEstado = estadoSelect.value;
         if (siglaEstado) {
@@ -55,7 +52,6 @@ function configurarFormulario() {
         }
     });
 
-    // Configura o envio do formulário
     formCadastro.addEventListener("submit", function (event) {
         event.preventDefault();
 
@@ -65,7 +61,6 @@ function configurarFormulario() {
         const estado = document.getElementById("estado").value;
         const cidade = document.getElementById("cidade").value;
 
-        // Envia os dados para o backend
         fetch('/api/PontosTuristicos', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

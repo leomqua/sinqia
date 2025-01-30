@@ -17,10 +17,6 @@
       "PackagePath": "staticwebassets\\js\\index.js"
     },
     {
-      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\js\\remover.js",
-      "PackagePath": "staticwebassets\\js\\remover.js"
-    },
-    {
       "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\cadastro.html",
       "PackagePath": "staticwebassets\\pages\\cadastro.html"
     },
@@ -31,10 +27,6 @@
     {
       "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\index.html",
       "PackagePath": "staticwebassets\\pages\\index.html"
-    },
-    {
-      "Id": "C:\\Users\\Leonardo\\Documents\\Prova\\wwwroot\\pages\\remover.html",
-      "PackagePath": "staticwebassets\\pages\\remover.html"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Prova.Microsoft.AspNetCore.StaticWebAssets.props",

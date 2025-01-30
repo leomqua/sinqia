@@ -32,10 +32,10 @@ namespace Prova.Controllers
         }
 
         // Remover ponto turístico pelo nome
-        [HttpDelete("{nome}")]
-        public IActionResult RemoverCadastro(string nome)
+        [HttpDelete("{id}")]
+        public IActionResult RemoverCadastro(int id)
         {
-            var acharCadastro = _context.PontosTuristicos.FirstOrDefault(x => x.Nome == nome);
+            var acharCadastro = _context.PontosTuristicos.FirstOrDefault(x => x.Id == id);
             if (acharCadastro == null)
             {
                 return NotFound("Ponto turístico não encontrado.");
