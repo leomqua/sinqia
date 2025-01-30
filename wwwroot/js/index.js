@@ -11,7 +11,7 @@ function carregarPontosTuristicos() {
 
             data.forEach(ponto => {
                 const row = `
-                    <tr>
+                    <tr onclick="mostrarDetalhes('${ponto.nome}')">
                         <td>${ponto.nome}</td>
                         <td>${ponto.localizacao}</td>
                         <td>${ponto.cidade}</td>
@@ -96,4 +96,38 @@ function apagarPonto(id) {
 
 function redirecionarParaEdicao(nome) {
     window.location.href = `editar.html?nome=${encodeURIComponent(nome)}`;
+}
+
+function fecharDetalhes() {
+    const detalhesContainer = document.getElementById('detalhesContainer');
+    detalhesContainer.style.display = "none"; // Oculta a seção de detalhes
+}
+
+function mostrarDetalhes(nome) {
+    fetch(`/api/PontosTuristicos/${nome}`)
+        .then(response => response.json())
+        .then(data => {
+            if (data.length === 0) {
+                alert("Ponto turístico não encontrado.");
+                return;
+            }
+
+            const detalhesContainer = document.getElementById('detalhesContainer');
+            const detalhesDiv = document.getElementById('detalhes');
+            const ponto = data[0];
+
+            detalhesDiv.innerHTML = `
+                <p><strong>Nome:</strong> ${ponto.nome}</p>
+                <p><strong>Descrição:</strong> ${ponto.descricao}</p>
+                <p><strong>Localização:</strong> ${ponto.localizacao}</p>
+                <p><strong>Cidade:</strong> ${ponto.cidade}</p>
+                <p><strong>Estado:</strong> ${ponto.estado}</p>
+            `;
+
+            detalhesContainer.style.display = "block"; // Mostra a seção de detalhes
+        })
+        .catch(error => {
+            console.error('Erro ao carregar detalhes:', error);
+            alert("Erro ao carregar os detalhes.");
+        });
 }
