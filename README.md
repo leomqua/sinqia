@@ -26,7 +26,7 @@ Antes de começar, você precisa ter os seguintes itens instalados:
 
 2️⃣ Clonar o Repositório  
 No terminal, execute os seguintes comandos:  
-git clone https://github.com/seu-usuario/seu-repositorio.git
+git clone https://github.com/leomqua/sinqia.git
 
 3️⃣ Configurar o Banco de Dados  
 1. Abra o arquivo appsettings.json na raiz do projeto.  
