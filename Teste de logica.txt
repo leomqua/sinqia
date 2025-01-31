@@ -1,0 +1,18 @@
+Teste Prático de Lógica
+
+1. Parar o carro em um lugar seguro.
+2. Acionar o pisca-alerta para sinalizar.
+3. Pegar o triângulo de sinalização e colocá-lo a uma distância segura.
+4. Pegar o macaco, a chave de roda e o estepe do porta-malas.
+5. Afrouxar os parafusos do pneu furado com a chave de roda.
+6. Posicionar o macaco no ponto de apoio.
+7. Erguer o carro com o macaco até que o pneu furdo fique suspenso no ar.
+8. Remover os parafusos do pneu furado.
+9. Retirar o pneu furado.
+10. Colocar o pneu reserva no local do pneu furado.
+11. Encaixar e apertar os parafusos.
+12. Abaixar o carro com o macaco até que o pneu toque o chão.
+13. Apertar os parafusos do pneu.
+14. Guardar o macaco, a chave de roda e o pneu furado.
+15. Retirar o triângulo da pista.
+16. Retomar a viagem.

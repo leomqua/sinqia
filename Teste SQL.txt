@@ -1,0 +1,68 @@
+Teste pratico de conhecimento em SQL
+
+1.
+SELECT Nome 
+FROM Clientes c
+WHERE EXISTS (
+    SELECT 1 
+    FROM Cidades ci 
+    WHERE ci.ID = c.Cidade_ID 
+    AND ci.Nome = 'TUPA'
+);
+
+2.
+SELECT Nome AS NomeCliente, Cidade AS NomeCidade
+FROM Clientes;
+3.
+SELECT Codigo, Nome 
+FROM Clientes 
+ORDER BY Nome;
+4.
+DELETE FROM Clientes
+WHERE Codigo BETWEEN 100 AND 200;
+5.
+UPDATE Cidades
+SET Estado = 'SP'
+WHERE Estado = 'PR';
+6.
+INSERT INTO Clientes (Codigo, Nome, Email, Telefone, Endereco, Estado)
+VALUES (10, 'João Pedro', 'joao.pedro@email.com', '(14) 99734-6754', 'Rua Argentina, 123', 'SP');
+7.
+CREATE VIEW vw_Cidades AS
+SELECT * FROM Cidades;
+
+SELECT * FROM vw_Cidades;
+
+8.
+CREATE PROCEDURE sp_ManageCidades 
+    @Acao NVARCHAR(10),  -- 'INSERT', 'UPDATE', 'DELETE'
+    @ID INT = NULL, 
+    @Nome NVARCHAR(100) = NULL, 
+    @Estado CHAR(2) = NULL
+AS
+BEGIN
+    SET NOCOUNT ON;
+
+    IF @Acao = 'INSERT'
+        INSERT INTO Cidades (Nome, Estado) 
+        VALUES (@Nome, @Estado);
+
+    ELSE IF @Acao = 'UPDATE'
+        UPDATE Cidades 
+        SET Nome = @Nome, Estado = @Estado 
+        WHERE ID = @ID;
+
+    ELSE IF @Acao = 'DELETE'
+        DELETE FROM Cidades 
+        WHERE ID = @ID;
+END;
+
+Para inserir:
+CALL sp_ManageCidades('INSERT', NULL, 'São Paulo', 'SP');
+
+Para deletar:
+CALL sp_ManageCidades('DELETE', 2, NULL, NULL);
+
+Para atualizar:
+CALL sp_ManageCidades('UPDATE', 1, 'Curitiba', 'PR');
+
