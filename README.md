@@ -36,7 +36,7 @@ git clone https://github.com/leomqua/sinqia.git
 }
 
 4️⃣ Criar o Banco de Dados  
-No terminal, aplique as migrações para criar o banco de dados: 
+No terminal, aplique as migrações para criar o banco de dados:   
  dotnet ef migrations add Inicial  
  dotnet ef database update  
 Caso o Entity Framework CLI não esteja instalado, use o comando abaixo para instalá-lo:  
