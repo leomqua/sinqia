@@ -20,7 +20,7 @@ Como Configurar o Projeto:
 1️⃣ Pré-requisitos  
 Antes de começar, você precisa ter os seguintes itens instalados:
 
-- .NET SDK 6.0 ou superior: Baixar .NET
+- .NET SDK 8.0: Baixar .NET
 - SQL Server: Baixar SQL Server
 - Um editor de código (ex: Visual Studio Code ou Visual Studio)
 
