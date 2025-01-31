@@ -31,17 +31,17 @@ git clone https://github.com/leomqua/sinqia.git
 3️⃣ Configurar o Banco de Dados  
 1. Abra o arquivo appsettings.json na raiz do projeto.  
 2. Edite a string de conexão para apontar para o seu servidor SQL. Exemplo:  
-"ConnectionStrings": {
-    "ConexaoPadrao": "Server=localhost;Database=PontosTuristicos;Trusted_Connection=True;TrustServerCertificate=True;"
-}
+**"ConnectionStrings": {**  
+   ** "ConexaoPadrao": "Server=localhost;Database=PontosTuristicos;Trusted_Connection=True;TrustServerCertificate=True;"**  
+**}**
 
 4️⃣ Criar o Banco de Dados  
 No terminal, aplique as migrações para criar o banco de dados:   
- dotnet ef migrations add Inicial  
- dotnet ef database update  
+ **dotnet ef migrations add Inicial**    
+ **dotnet ef database update**    
 Caso o Entity Framework CLI não esteja instalado, use o comando abaixo para instalá-lo:  
-dotnet tool install --global dotnet-ef
+**dotnet tool install --global dotnet-ef**  
 
 5️⃣ Executar o Projeto  
 Para iniciar o projeto, execute o comando abaixo:  
-dotnet run
+**dotnet run**
