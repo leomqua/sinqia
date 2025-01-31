@@ -10,7 +10,7 @@ Este é um sistema para o cadastro, listagem, atualização e exclusão de ponto
 - Excluir pontos turísticos.
 
 Tecnologias Utilizadas
-- ASP.NET Core 6.0 - Backend
+- ASP.NET Core 8.0 - Backend
 - Entity Framework Core - Gerenciamento do banco de dados
 - SQL Server - Banco de dados
 - Bootstrap 5 - Estilização
