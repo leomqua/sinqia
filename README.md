@@ -45,3 +45,10 @@ Caso o Entity Framework CLI não esteja instalado, use o comando abaixo para ins
 5️⃣ Executar o Projeto  
 Para iniciar o projeto, execute o comando abaixo:  
 **dotnet run**
+
+6️⃣ Acessar a Aplicação  
+Após iniciar o projeto com dotnet run, abra o navegador e acesse a aplicação pelo endereço informado no terminal. Geralmente, o endereço segue este formato:  
+
+- **http://localhost:5000/pages/index.html**  
+
+O número da porta **(5000)** pode variar dependendo da configuração do ambiente. Caso seja diferente, utilize o endereço exibido no terminal ao iniciar a aplicação.
