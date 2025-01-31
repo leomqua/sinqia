@@ -17,13 +17,11 @@ function carregarPontosTuristicos() {
                         <td>${ponto.cidade}</td>
                         <td>${ponto.estado}</td>
                         <td>
-                            <!-- Botão de edição com ícone de lápis -->
                             <button class="btn btn-warning btn-sm" onclick="redirecionarParaEdicao('${ponto.nome}')">
                                 <i class="bi bi-pencil"></i>
                             </button>
                         </td>
                         <td>
-                            <!-- Botão de remoção com ícone de X -->
                             <button class="btn btn-danger btn-sm" onclick="apagarPonto(${ponto.id})">
                                 <i class="bi bi-x"></i>
                             </button>
