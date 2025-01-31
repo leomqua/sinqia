@@ -7,7 +7,7 @@ using Prova.Models;
 namespace Prova.Controllers
 {
     [ApiController]
-    [Route("api/[controller]")] // Define a rota base como /api/PontosTuristicos
+    [Route("api/[controller]")]
     public class PontosTuristicosController : ControllerBase
     {
         private readonly OrganizadorContext _context;
@@ -17,7 +17,7 @@ namespace Prova.Controllers
             _context = context;
         }
 
-        // Cadastro de ponto turístico
+        
         [HttpPost]
         public IActionResult Cadastrar([FromBody] PontosTuristicos pontos)
         {
@@ -31,7 +31,7 @@ namespace Prova.Controllers
             return Ok(pontos);
         }
 
-        // Remover ponto turístico pelo nome
+        
         [HttpDelete("{id}")]
         public IActionResult RemoverCadastro(int id)
         {
@@ -47,52 +47,51 @@ namespace Prova.Controllers
         }
 
 
-[HttpGet("{termo}")]
-public IActionResult AcharCadastro(string termo)
-{
-    termo = termo.ToLower(); // Converte para minúsculas para evitar erros na busca
-
-    var acharCadastro = _context.PontosTuristicos
-        .Where(x => x.Nome.ToLower().Contains(termo) || x.Cidade.ToLower().Contains(termo)) // Agora busca pelo nome e pela cidade
-        .ToList();
-
-    if (!acharCadastro.Any())
-    {
-        return NotFound("Nenhum ponto turístico encontrado.");
-    }
-
-    return Ok(acharCadastro);
-}
-
-
-        // Listar todos os pontos turísticos
-    [HttpGet]
-    public IActionResult AcharTodos()
-    {
-        try
+        [HttpGet("{termo}")]
+        public IActionResult AcharCadastro(string termo)
         {
-            var acharTodos = _context.PontosTuristicos.OrderByDescending(x => x.Id).ToList();
-        
-            // Log para verificar se a consulta retornou registros
-            Console.WriteLine($"Total de registros encontrados: {acharTodos.Count}");
+            termo = termo.ToLower(); 
 
-            if (!acharTodos.Any())
+            var acharCadastro = _context.PontosTuristicos
+                .Where(x => x.Nome.ToLower().Contains(termo) || x.Cidade.ToLower().Contains(termo)) 
+                .ToList();
+
+            if (!acharCadastro.Any())
             {
-                return NoContent(); // Retorna 204 se não houver registros
+                return NotFound("Nenhum ponto turístico encontrado.");
             }
 
-            return Ok(acharTodos); // Retorna os dados
+            return Ok(acharCadastro);
         }
-        catch (Exception ex)
+
+
+        
+        [HttpGet]
+        public IActionResult AcharTodos()
         {
-            // Log do erro
-            Console.WriteLine($"Erro ao buscar pontos turísticos: {ex.Message}");
-            return StatusCode(500, "Erro interno no servidor.");
-    }
-}
+            try
+            {
+                var acharTodos = _context.PontosTuristicos.OrderByDescending(x => x.Id).ToList();
+        
+                Console.WriteLine($"Total de registros encontrados: {acharTodos.Count}");
+
+                if (!acharTodos.Any())
+                {
+                    return NoContent();
+                }
+
+                return Ok(acharTodos);
+            }
+            catch (Exception ex)
+            {
+        
+                Console.WriteLine($"Erro ao buscar pontos turísticos: {ex.Message}");
+                return StatusCode(500, "Erro interno no servidor.");
+            }
+        }
 
 
-        // Atualizar um ponto turístico pelo nome
+        
         [HttpPut("{nome}")]
         public IActionResult AtualizarCadastro(string nome, [FromBody] PontosTuristicos pontos)
         {
