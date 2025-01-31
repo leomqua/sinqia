@@ -41,13 +41,12 @@ function carregarPontosTuristicos() {
 function filtrar() {
     const termo = document.getElementById("searchBox").value.toLowerCase();
 
-    fetch(`/api/PontosTuristicos/${termo}`)
+    fetch(`/api/PontosTuristicos/${encodeURIComponent(termo)}`)
         .then(response => {
             if (!response.ok) {
                 if (response.status === 404) {
-
                     const tableBody = document.getElementById("tableBody");
-                    tableBody.innerHTML = `<tr><td colspan="4" class="text-center">Nenhum ponto turístico encontrado com esse nome</td></tr>`;
+                    tableBody.innerHTML = `<tr><td colspan="4" class="text-center">Nenhum ponto turístico encontrado.</td></tr>`;
                     return null;
                 }
                 throw new Error(`Erro na busca: ${response.statusText}`);
@@ -55,13 +54,13 @@ function filtrar() {
             return response.json();
         })
         .then(data => {
-            if (!data) return; 
+            if (!data) return;
 
             const tableBody = document.getElementById("tableBody");
-            tableBody.innerHTML = ""; 
+            tableBody.innerHTML = "";
 
             data.forEach(ponto => {
-                const row = `<tr>
+                const row = `<tr onclick="mostrarDetalhes('${ponto.nome}')">
                     <td>${ponto.nome}</td>
                     <td>${ponto.localizacao}</td>
                     <td>${ponto.cidade}</td>
@@ -71,10 +70,11 @@ function filtrar() {
             });
         })
         .catch(error => {
-            console.error('Erro ao buscar pontos turísticos:', error);
-            alert('Erro ao buscar os dados. Verifique a API.');
+            console.error("Erro ao buscar pontos turísticos:", error);
+            alert("Erro ao buscar os dados. Verifique a API.");
         });
 }
+
 
 function apagarPonto(id) {
     if (confirm("Tem certeza de que deseja excluir este ponto turístico?")) {
@@ -100,7 +100,7 @@ function redirecionarParaEdicao(nome) {
 
 function fecharDetalhes() {
     const detalhesContainer = document.getElementById('detalhesContainer');
-    detalhesContainer.style.display = "none"; // Oculta a seção de detalhes
+    detalhesContainer.style.display = "none"; 
 }
 
 function mostrarDetalhes(nome) {
@@ -124,7 +124,7 @@ function mostrarDetalhes(nome) {
                 <p><strong>Estado:</strong> ${ponto.estado}</p>
             `;
 
-            detalhesContainer.style.display = "block"; // Mostra a seção de detalhes
+            detalhesContainer.style.display = "block"; 
         })
         .catch(error => {
             console.error('Erro ao carregar detalhes:', error);

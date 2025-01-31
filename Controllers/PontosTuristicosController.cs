@@ -46,18 +46,24 @@ namespace Prova.Controllers
             return NoContent();
         }
 
-        // Buscar um ponto turístico pelo nome
-        [HttpGet("{nome}")]
-        public IActionResult AcharCadastro(string nome)
-        {
-            var acharCadastro = _context.PontosTuristicos.Where(x => x.Nome.Contains(nome)).ToList();
-            if (!acharCadastro.Any())
-            {
-                return NotFound("Nenhum ponto turístico encontrado com esse nome.");
-            }
 
-            return Ok(acharCadastro);
-        }
+[HttpGet("{termo}")]
+public IActionResult AcharCadastro(string termo)
+{
+    termo = termo.ToLower(); // Converte para minúsculas para evitar erros na busca
+
+    var acharCadastro = _context.PontosTuristicos
+        .Where(x => x.Nome.ToLower().Contains(termo) || x.Cidade.ToLower().Contains(termo)) // Agora busca pelo nome e pela cidade
+        .ToList();
+
+    if (!acharCadastro.Any())
+    {
+        return NotFound("Nenhum ponto turístico encontrado.");
+    }
+
+    return Ok(acharCadastro);
+}
+
 
         // Listar todos os pontos turísticos
     [HttpGet]
